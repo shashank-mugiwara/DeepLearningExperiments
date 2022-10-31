@@ -34,3 +34,9 @@ print('Total Number of features: {}'.format(example.shape))
 
 # Returns - tensor(5)
 print('Label of index 0: {}'.format(label))
+
+# Split into training and testing data
+train_size = int(len(dataset) * 0.8)
+test_size = len(dataset) - train_size
+train_data, test_data = torch.utils.data.random_split(dataset=dataset, lengths=(train_size, test_size))
+print('Number of records in train_data: {} and number of records in test_data: {}'.format(len(train_data), len(test_data)))
